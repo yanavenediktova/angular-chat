@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bulma/bulma.sass";
+@import "~normalize.css"; // /* You can add global styles to this file, and also import other style files */
+// Changing bulma variables and adding global styles
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+// Set your brand colors
+$purple: #a59ad7;
+$pink: #fe76c2;
+$blue: #37c7f2;
+
+$light-red: #fff3f3;
+
+$light: #fafcff;
+$dark: #3d4a51;
+
+$green: #0bf387;
+
+html,
+body {
+  background: linear-gradient(to right, $pink, $blue);
+  // Set the default font size to 18px
+}

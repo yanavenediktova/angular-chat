@@ -1,0 +1,18 @@
+<a (click)="clicked($event)" class="thread">
+  <div class="thread__media conversation">
+    <div class="conversation__avatar">
+      <img class="conversation__img avatar" [src]="thread.avatarSrc" />
+    </div>
+    <div class="thread__body">
+      <h5
+        class="mt-0 contact-name"
+        [ngClass]="{
+          selected: selected
+        }"
+      >
+        {{ thread.name }}
+      </h5>
+      <span class="message-preview">{{ thread.lastMessage.text }}</span>
+    </div>
+  </div>
+</a>

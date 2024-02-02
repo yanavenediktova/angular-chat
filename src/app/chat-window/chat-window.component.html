@@ -1,0 +1,39 @@
+<section class="chat-window">
+  <div class="chat-window__wrapper">
+    <header class="chat-window__heading top-bar">
+      <div class="chat-heading-container">
+        <h3 class="chat-window__title">Chat</h3>
+      </div>
+    </header>
+
+    <div class="chat-window__container">
+      <div class="chat-window__body msg-container-base">
+        <app-chat-message
+          *ngFor="let message of messages | async"
+          [message]="message"
+        >
+        </app-chat-message>
+      </div>
+
+      <div class="chat-window__footer">
+        <div class="chat-window__input-msg">
+          <input
+            type="text"
+            class="chat-window__input input"
+            placeholder="Write your message here..."
+            (keydown.enter)="onEnter($event)"
+            [(ngModel)]="draftMessage.text"
+          />
+
+          <div class="btn-container">
+            <button
+              type="button"
+              class="btn-chat"
+              (click)="onEnter($event)"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+.conversation-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  height: 100%;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  background-color: rgb(230, 235, 250);
+}
