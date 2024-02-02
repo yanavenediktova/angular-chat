@@ -30,7 +30,7 @@ export class MessagesService {
       scan((messages: Message[], operation: MessageOperation) => {
         return operation(messages);
       }, initialMessages),
-      publishReplay(1),
+      publishReplay(1), // Вот с этими конструкциями нужно быть очень аккуратным, частенько это может вызывать всяческие неприятные сайдэфекты
       refCount()
     );
 
@@ -50,6 +50,13 @@ export class MessagesService {
           return (messages: Message[]) => {
             return messages.map((message: Message) => {
               if (message.thread.id === thread.id) {
+                // Это мутация объекта, я говорил про это. Правильнее было бы
+                /*
+                * return {
+                  * ...message,
+                  * isRead: true
+                * }
+                * */
                 message.isRead = true;
               }
               return message;

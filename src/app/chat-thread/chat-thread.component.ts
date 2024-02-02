@@ -15,6 +15,9 @@ export class ChatThreadComponent implements OnInit {
   constructor(public threadsService: ThreadsService) {}
 
   ngOnInit(): void {
+    /*
+     Тут можно использовать async pipe. Я вижу ты уже юзала его в другом компоненте
+     */
     this.threadsService.currentThread.subscribe((currentThread: Thread) => {
       this.selected =
         currentThread && this.thread && currentThread.id === this.thread.id;
