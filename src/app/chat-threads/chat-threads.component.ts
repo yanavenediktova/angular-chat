@@ -12,6 +12,7 @@ import { Thread } from "../thread/thread.model";
 export class ChatThreadsComponent implements OnInit {
   threads: Observable<Thread[]>;
 
+  /* Лучше оставлять минимум логики в конструкторе, он имеет свои ограничения по сравнению с ngOnInit */
   constructor(public threadsService: ThreadsService) {
     this.threads = threadsService.orderedThreads;
   }

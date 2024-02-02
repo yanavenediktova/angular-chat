@@ -24,6 +24,7 @@ $input-shadow: none;
 
 // Set custom global styles (will be applied to whole app)
 
+// Лучше тогда использовать css переменные и переопределять их в компонентах, чем задавать свойства для глобальных селекторов
 body {
   background: linear-gradient(to right top, $turquoise, $green);
 }
@@ -33,6 +34,7 @@ body {
   height: 100%;
 }
 
+// Не забывай про БЭМ. В ангуляр он ложиться очень хорошо
 .centered-content {
   margin: 25vh auto;
   display: flex;

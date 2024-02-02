@@ -11,9 +11,11 @@ import { Router } from "@angular/router";
 export class SignupPageComponent implements OnInit {
   constructor(private router: Router) {}
 
+  // Старайся удалять из кода методы/переменные, которые не используются, закомментированные или пустые
+  // Так код будет опрятнее выглядеть
   ngOnInit() {}
 
   onSignupButtonClicked(email: string, password: string) {
-    this.router.navigate(["/chats"]);
+    this.router.navigate(["/chats"]); // Не похоже на регистрацию)
   }
 }

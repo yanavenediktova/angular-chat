@@ -58,6 +58,9 @@ export class ChatWindowComponent implements OnInit {
   }
 
   sendMessage(): void {
+    // Если хочешь склонировать обхект, то лучше использовать spread оператор
+    // const m: Message = { ...this.draftMessage };
+    // В противном случае это
     const m: Message = this.draftMessage;
     m.author = this.currentUser;
     m.thread = this.currentThread;
